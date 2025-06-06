@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar Habilidades - SkillTrade</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <style>
+        /* Estilos específicos para la página de servicios */
+        #page-hero.services-hero {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0 40px;
+        }
+
+        #page-hero.services-hero h2 {
+            color: var(--white);
+            font-size: 2.8em;
+            margin-bottom: 15px;
+        }
+
+        #page-hero.services-hero p {
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .search-bar {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .search-bar input[type="text"],
+        .search-bar select {
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+        }
+
+        .search-bar button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background-color: #45a049;
+        }
+
+        #services-list {
+            padding: 60px 0;
+        }
+
+        #services-list h3 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2em;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h4 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+
+        .service-card .category {
+            background-color: #e0f2f7;
+            color: #0288d1;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+
+        .service-card .provider {
+            font-size: 0.9em;
+            color: var(--light-text-color);
+            margin-bottom: 15px;
+        }
+
+        .service-card .description {
+            font-size: 0.95em;
+            margin-bottom: 20px;
+        }
+
+        .service-card .btn-primary {
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .search-bar {
+                flex-direction: column;
+            }
+            .search-bar input[type="text"],
+            .search-bar select,
+            .search-bar button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="SkillTrade Logo">
+                <h1>SkillTrade</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="services.html">Explorar Habilidades</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="#" class="btn-primary">Registrarse</a></li>
+                    <li><a href="#" class="btn-secondary">Iniciar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="page-hero" class="services-hero">
+        <div class="container">
+            <h2>Explora Habilidades y Servicios</h2>
+            <p>Encuentra el talento que necesitas o la oportunidad para ofrecer el tuyo.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Busca por habilidad, palabra clave...">
+                <select>
+                    <option value="">Todas las categorías</option>
+                    <option value="idiomas">Idiomas</option>
+                    <option value="arte">Arte y Diseño</option>
+                    <option value="tecnologia">Tecnología y Programación</option>
+                    <option value="educacion">Educación y Tutorías</option>
+                    <option value="bienestar">Bienestar y Salud</option>
+                    <option value="hogar">Hogar y Reparaciones</option>
+                    <option value="musica">Música y Sonido</option>
+                    <option value="fotografia">Fotografía y Video</option>
+                </select>
+                <button>Buscar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="services-list">
+        <div class="container">
+            <h3>Habilidades Destacadas</h3>
+            <div class="service-grid">
+                <div class="service-card">
+                    <span class="category">Educación</span>
+                    <h4>Clases de Excel Avanzado</h4>
+                    <p class="provider">Ofrecido por: Ana G.</p>
+                    <p class="description">Aprende a dominar Excel desde lo básico hasta funciones complejas y macros. ¡Ideal para estudiantes y profesionales!</p>
+                    <a href="#" class="btn-primary">Negociar Servicio</a>
+                </div>
+                <div class="service-card">
+                    <span class="category">Arte y Diseño</span>
+                    <h4>Diseño de Logos Profesionales</h4>
+                    <p class="provider">Ofrecido por: Carlos R.</p>
+                    <p class="description">Creación de identidad visual única y memorable para tu marca o proyecto personal.</p>
+                    <a href="#" class="btn-primary">Negociar Servicio</a>
+                </div>
+                <div class="service-card">
+                    <span class="category">Tecnología</span>
+                    <h4>Reparación y Mantenimiento de PCs</h4>
+                    <p class="provider">Ofrecido por: Luis M.</p>
+                    <p class="description">Soluciones a problemas de hardware y software, optimización y mantenimiento preventivo.</p>
+                    <a href="#" class="btn-primary">Negociar Servicio</a>
+                </div>
+                <div class="service-card">
+                    <span class="category">Idiomas</span>
+                    <h4>Tutorías de Inglés Conversacional</h4>
+                    <p class="provider">Ofrecido por: Sofía P.</p>
+                    <p class="description">Mejora tu fluidez y confianza en inglés con sesiones personalizadas.</p>
+                    <a href="#" class="btn-primary">Negociar Servicio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SkillTrade. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
