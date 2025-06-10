@@ -5,57 +5,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros - SkillTrade</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="img/logo.png" type="image/png">
+    <style>
+        /* Estilos específicos para la página Sobre Nosotros */
+        .page-hero.about-hero {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0 40px;
+        }
+
+        .page-hero.about-hero h2 {
+            color: var(--white);
+            font-size: 2.8em;
+            margin-bottom: 15px;
+        }
+
+        .page-hero.about-hero p {
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        #content-about {
+            padding: 60px 0;
+            text-align: left; /* Alinea el texto a la izquierda en esta sección */
+        }
+
+        #content-about .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2em;
+        }
+
+        #content-about h3 {
+            font-size: 1.8em;
+            color: var(--secondary-color);
+            margin-top: 30px;
+            margin-bottom: 20px;
+            text-align: left; /* Asegura el alineado a la izquierda */
+        }
+        #content-about h3::after { /* Eliminar el subrayado decorativo para h3 */
+            display: none;
+        }
+
+        #content-about p {
+            font-size: 1em;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        #content-about ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        #content-about ul li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            color: var(--light-text-color);
+        }
+
+        #content-about ul li strong {
+            color: var(--text-color);
+        }
+        #content-about ul li::before {
+            content: "\f00c"; /* Font Awesome check icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 0.9em;
+        }
+
+        .about-image-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .about-image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <header class="main-header">
         <div class="container">
             <div class="logo">
                 <img src="img/logo.png" alt="SkillTrade Logo">
                 <h1>SkillTrade</h1>
             </div>
-            <nav>
+            <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="services.html">Explorar Habilidades</a></li>
                     <li><a href="about.html">Sobre Nosotros</a></li>
                     <li><a href="contact.html">Contacto</a></li>
-                    <li><a href="#" class="btn-primary">Registrarse</a></li>
-                    <li><a href="#" class="btn-secondary">Iniciar Sesión</a></li>
+                    <li><a href="login.html" class="btn btn-secondary">Iniciar Sesión</a></li>
+                    <li><a href="register.html" class="btn btn-primary">Registrarse</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="page-hero" class="about-hero">
-        <div class="container">
-            <h2>Sobre Nosotros</h2>
-            <p>Nuestra misión es empoderar a las personas a través del intercambio de conocimientos y servicios.</p>
-        </div>
-    </section>
+    <main>
+        <section class="page-hero about-hero">
+            <div class="container">
+                <h2>Sobre Nosotros</h2>
+                <p>Nuestra misión es empoderar a las personas a través del intercambio de conocimientos y servicios, construyendo una comunidad de colaboración.</p>
+            </div>
+        </section>
 
-    <section id="content">
-        <div class="container">
-            <h3>Nuestra Visión</h3>
-            <p>En SkillTrade, creemos en el poder de la colaboración y el autoempleo. Queremos construir una comunidad donde las habilidades se valoren y se intercambien de manera justa, contribuyendo a una economía más sostenible y equitativa. Fomentamos la educación continua y el crecimiento personal y profesional de todos nuestros usuarios.</p>
+        <section id="content-about" class="section-padded">
+            <div class="container">
+                <h3 class="section-title">Nuestra Historia y Propósito</h3>
+                <p>En SkillTrade, nacimos de la convicción de que el conocimiento y las habilidades son los activos más valiosos que poseemos. En un mundo que busca la sostenibilidad y la conexión, vimos una oportunidad para crear una plataforma que facilitara el intercambio directo de talentos, reduciendo la necesidad de transacciones puramente monetarias y fomentando una economía más circular y colaborativa.</p>
+                <p>Desde nuestro inicio, nos hemos comprometido a construir una comunidad donde cada persona pueda monetizar su experiencia, aprender de otros y contribuir al crecimiento mutuo. Creemos firmemente que al compartir lo que sabemos hacer, no solo mejoramos nuestras vidas, sino que también fortalecemos el tejido social y económico local.</p>
 
-            <h3>Nuestros Valores</h3>
-            <ul>
-                <li><strong>Colaboración:</strong> Creemos en el poder de trabajar juntos para lograr más.</li>
-                <li><strong>Justicia:</strong> Promovemos acuerdos equitativos y transparentes para todos.</li>
-                <li><strong>Sostenibilidad:</strong> Contribuimos a un futuro mejor a través del intercambio de servicios.</li>
-                <li><strong>Empoderamiento:</strong> Ayudamos a las personas a monetizar y desarrollar sus habilidades.</li>
-            </ul>
-        </div>
-    </section>
+                <h3>Nuestra Visión</h3>
+                <p>Visualizamos un futuro donde SkillTrade sea el referente global para el intercambio de habilidades, reconocido por su enfoque en la negociación justa, el impacto sostenible y la construcción de comunidades empoderadas. Queremos ser el puente que conecta el talento con la necesidad, en cualquier lugar y en cualquier momento.</p>
 
-    <footer>
+                <h3>Nuestros Valores</h3>
+                <ul>
+                    <li><strong><i class="fas fa-users"></i> Colaboración:</strong> Creemos en el poder de trabajar juntos para lograr más de lo que podríamos individualmente.</li>
+                    <li><strong><i class="fas fa-balance-scale"></i> Justicia:</strong> Promovemos acuerdos equitativos y transparentes, donde el valor se reconoce mutuamente.</li>
+                    <li><strong><i class="fas fa-leaf"></i> Sostenibilidad:</strong> Contribuimos a un futuro más verde a través del intercambio de servicios y la reducción del consumo.</li>
+                    <li><strong><i class="fas fa-hand-holding-heart"></i> Empoderamiento:</strong> Ayudamos a las personas a descubrir, desarrollar y monetizar sus habilidades.</li>
+                    <li><strong><i class="fas fa-lightbulb"></i> Innovación:</strong> Buscamos constantemente nuevas formas de mejorar la experiencia de intercambio y la utilidad de nuestra plataforma.</li>
+                </ul>
+
+                <div class="about-image-section">
+                    <img src="https://via.placeholder.com/800x400/4CAF50/FFFFFF?text=Comunidad+Colaborativa" alt="Comunidad SkillTrade">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2025 SkillTrade. Todos los derechos reservados.</p>
-            <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">LinkedIn</a>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="img/logo.png" alt="SkillTrade Logo" class="footer-logo">
+                    <p>SkillTrade: Conectando talentos para un futuro colaborativo y sostenible.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="services.html">Explorar Habilidades</a></li>
+                        <li><a href="about.html">Sobre Nosotros</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Términos de Servicio</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SkillTrade. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
