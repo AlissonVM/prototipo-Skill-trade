@@ -9,6 +9,7 @@
     --light-text-color: #666666;
     --background-light: #F8F8F8;
     --background-mid: #EEEEEE;
+    --background-dark: #2c3e50; /* Un gris oscuro para el footer */
     --white: #FFFFFF;
     --border-radius: 8px;
     --shadow-light: 0 4px 10px rgba(0,0,0,0.08);
@@ -220,7 +221,7 @@ a:hover {
     border-radius: 2px;
 }
 
-/* --- Hero Section --- */
+/* --- Hero Section (General para todas las páginas) --- */
 .hero-section {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/hero-background.jpg') no-repeat center center/cover;
     color: var(--white);
@@ -250,6 +251,24 @@ a:hover {
 
 .hero-actions .btn {
     margin: 0 10px;
+}
+
+/* Page Specific Heroes (e.g., for Services, About, Contact) */
+.page-hero {
+    color: var(--white);
+    text-align: center;
+    padding: 80px 0 40px; /* Ajuste el padding para espacio */
+}
+.page-hero h2 {
+    color: var(--white);
+    font-size: 2.8em;
+    margin-bottom: 15px;
+}
+.page-hero p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: rgba(255,255,255,0.9);
 }
 
 /* --- Features Section --- */
@@ -535,6 +554,9 @@ a:hover {
     }
     .main-nav ul li {
         margin: 5px 10px;
+    }
+    .main-nav ul li:last-child { /* Ajuste para el último botón en nav */
+        margin-right: 0;
     }
     .hero-section {
         padding: 100px 0;
