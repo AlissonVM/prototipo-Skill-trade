@@ -349,4 +349,242 @@ a:hover {
 
 .step-card p {
     color: var(--light-text-color);
-    font-size:
+    font-size: 0.9em;
+}
+
+/* --- Testimonials Section --- */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    text-align: left;
+}
+
+.testimonial-quote {
+    font-size: 1.1em;
+    font-style: italic;
+    color: var(--light-text-color);
+    margin-bottom: 25px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.rating {
+    color: var(--accent-color);
+    font-size: 1em;
+}
+.rating .fas {
+    margin-right: 2px;
+}
+
+/* --- Call to Action Section --- */
+.cta-section {
+    padding: 100px 0;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 3em;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+.cta-title::after { /* Eliminar el subrayado para este título */
+    display: none;
+}
+
+.cta-subtitle {
+    font-size: 1.3em;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 40px;
+}
+
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--background-dark);
+    color: var(--white);
+    padding: 50px 0 20px;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-brand .footer-logo {
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    color: rgba(255,255,255,0.8);
+}
+
+.footer-links h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: rgba(255,255,255,0.7);
+    font-weight: 400;
+}
+
+.footer-links ul li a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.footer-social h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.footer-social a {
+    color: var(--white);
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: rgba(255,255,255,0.6);
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.8em;
+    }
+    .hero-subtitle {
+        font-size: 1.2em;
+    }
+    .section-title {
+        font-size: 2em;
+    }
+    .main-nav ul li {
+        margin-left: 15px;
+    }
+    .main-nav ul li .btn {
+        padding: 8px 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .main-nav ul li {
+        margin: 5px 10px;
+    }
+    .hero-section {
+        padding: 100px 0;
+    }
+    .hero-title {
+        font-size: 2.2em;
+    }
+    .hero-subtitle {
+        font-size: 1em;
+    }
+    .hero-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero-actions .btn {
+        width: 80%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .section-padded {
+        padding: 50px 0;
+    }
+    .section-title {
+        font-size: 1.8em;
+    }
+    .feature-grid, .steps-grid, .testimonial-grid, .footer-content {
+        grid-template-columns: 1fr;
+    }
+    .step-card {
+        padding-top: 45px; /* Ajuste para el número en móvil */
+    }
+    .step-card .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8em;
+        top: -25px;
+    }
+    .cta-title {
+        font-size: 2.2em;
+    }
+    .cta-subtitle {
+        font-size: 1.1em;
+    }
+    .footer-content > div {
+        text-align: center;
+    }
+    .footer-social {
+        margin-top: 20px;
+    }
+    .footer-social a {
+        margin: 0 8px;
+    }
+}
