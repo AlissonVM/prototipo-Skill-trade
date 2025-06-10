@@ -279,3 +279,7 @@ footer .social-links a:hover {
         grid-template-columns: 1fr;
     }
 }
+    .feature-grid, .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
