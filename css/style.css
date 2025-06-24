@@ -157,6 +157,19 @@ p.section-description { /* Para descripciones debajo de títulos de sección */
     font-size: 0.85em;
 }
 
+.btn-white { /* Nuevo estilo para botones sobre fondos oscuros */
+    background-color: #fff;
+    color: var(--primary-color);
+    border: 2px solid #fff;
+    font-weight: 700;
+}
+.btn-white:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #fff;
+}
+
+
 /* --- Header --- */
 header {
     background-color: var(--header-bg);
@@ -268,6 +281,11 @@ header nav ul li a:hover::after {
 .hero-section.hero-small {
     min-height: 280px;
     padding: var(--spacing-lg) 0;
+    /* Esto es para que las páginas About y Contact puedan usar su propia imagen de fondo */
+    background-image: var(--hero-small-bg-image, url('../img/hero-background.jpg')); 
+}
+.hero-section.hero-small::before {
+    background-color: rgba(0, 0, 0, 0.5); /* Menos oscuro para páginas secundarias */
 }
 
 .hero-section.hero-small h2 {
@@ -390,17 +408,6 @@ header nav ul li a:hover::after {
     margin-left: auto;
     margin-right: auto;
     color: #e0f2f7;
-}
-.premium-intro-section .btn-large {
-    background-color: #fff;
-    color: var(--pro-tag-bg);
-    border: 2px solid #fff;
-    font-weight: 700;
-}
-.premium-intro-section .btn-large:hover {
-    background-color: var(--accent-color);
-    color: #fff;
-    border-color: var(--accent-color);
 }
 
 /* --- Testimonials Section (Index) --- */
@@ -704,6 +711,92 @@ header nav ul li a:hover::after {
 .service-card.featured .featured-badge i {
     margin-right: var(--spacing-xs);
     color: #fff;
+}
+
+
+/* --- About Us Page --- */
+.about-content-section {
+    background-color: #fff;
+}
+
+.about-text-block {
+    max-width: 900px;
+    margin: 0 auto var(--spacing-xl) auto; /* Espacio entre bloques */
+    line-height: 1.8;
+}
+
+.about-text-block h3 {
+    text-align: left;
+    margin-bottom: var(--spacing-md);
+    font-size: 2em;
+    color: var(--text-color-dark);
+}
+
+.about-text-block p {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.05em;
+}
+
+.about-text-block ul {
+    margin-top: var(--spacing-md);
+}
+.about-text-block ul li {
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.05em;
+    color: var(--text-color-dark);
+}
+.about-text-block ul li i {
+    margin-right: var(--spacing-sm);
+    color: var(--primary-color);
+    font-size: 1.3em;
+    margin-top: 5px; /* Alineación del ícono */
+}
+
+/* Team Section */
+.team-section {
+    text-align: center;
+}
+.team-section h3 {
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.team-member {
+    background-color: var(--background-light);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-light);
+    text-align: center;
+}
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: var(--spacing-md);
+    border: 3px solid var(--primary-color);
+}
+.team-member h4 {
+    font-size: 1.4em;
+    margin-bottom: var(--spacing-xs);
+}
+.team-member p {
+    font-size: 0.9em;
+    color: var(--text-color-light);
+    margin-bottom: var(--spacing-sm);
+}
+.team-member .member-bio {
+    font-size: 0.95em;
+    font-style: italic;
+    color: var(--text-color-medium);
 }
 
 
@@ -1043,7 +1136,7 @@ header nav ul li a:hover::after {
     display: block;
     width: 150px; /* Ancho de la cinta */
     padding: 8px 0;
-    background-color: var(--primary-color-dark); /* Color más oscuro para el ribbon */
+    background-color: var(--featured-badge-bg); /* Cambiado a naranja/rojizo para "Más Popular" */
     box-shadow: 0 5px 10px rgba(0,0,0,.15);
     color: #fff;
     font-size: 0.8em; /* Tamaño de texto más pequeño */
@@ -1347,6 +1440,9 @@ footer {
     .contact-info-grid {
         padding: var(--spacing-md);
     }
+    .contact-details h3, .contact-form-container h3 {
+        text-align: center;
+    }
 
     .auth-form-container {
         padding: var(--spacing-lg);
@@ -1361,12 +1457,14 @@ footer {
     .pricing-card .price, .promo-card .promo-price {
         font-size: 3em;
     }
-
+    .pricing-card .subtitle, .promo-card .subtitle {
+        font-size: 0.85em;
+    }
     .pricing-card .ribbon span, .promo-card .ribbon span {
-        width: 180px; /* Ajustar el ancho del ribbon en móvil */
-        left: -45px;
-        top: 25px;
-        font-size: 0.7em;
+        width: 150px;
+        left: -35px;
+        top: 22px;
+        font-size: 0.65em;
     }
 
     .chat-popup {
