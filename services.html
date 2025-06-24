@@ -18,7 +18,8 @@
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="services.html">Explorar Habilidades</a></li>
-                    <li><a href="premium.html">SkillTrade Pro</a></li> <li><a href="about.html">Nosotros</a></li>
+                    <li><a href="premium.html">SkillTrade Pro</a></li>
+                    <li><a href="about.html">Nosotros</a></li>
                     <li><a href="contact.html">Contacto</a></li>
                 </ul>
                 <div class="auth-buttons">
@@ -37,7 +38,7 @@
             </div>
         </section>
 
-        <section class="search-section">
+        <section class="search-section section-padded-sm">
             <div class="container">
                 <div class="search-bar">
                     <input type="text" id="search-input" placeholder="Buscar habilidades o servicios...">
@@ -55,26 +56,29 @@
             </div>
         </section>
 
-        <section class="services-listing">
+        <section class="services-listing section-padded">
             <div class="container">
                 <h3>Habilidades Destacadas y Populares</h3>
                 <div class="service-grid" id="service-list">
-                    <div class="service-card featured" data-category="idiomas"> <div class="featured-badge"><i class="fas fa-star"></i> Destacado</div>
+                    <div class="service-card featured" data-category="idiomas">
+                        <div class="featured-badge"><i class="fas fa-star"></i> Destacado</div>
                         <img src="https://via.placeholder.com/300x200?text=Clases+Ingles" alt="Clases de Inglés">
                         <div class="card-content">
                             <h4>Clases de Inglés Conversacional <span class="pro-tag">PRO</span></h4>
                             <p class="category"><i class="fas fa-tag"></i> Idiomas y Educación</p>
                             <a href="#" class="provider-link">
                                 <img src="img/profile-placeholder.jpg" alt="Ana Pérez" class="provider-avatar">
-                                <span class="provider-name">Ana Pérez</span> <span class="pro-tag">PRO</span>
+                                <span class="provider-name">Ana Pérez</span> <span class="pro-tag small">PRO</span>
                             </a>
                             <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> (4.5)
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span class="rating-value">(4.5)</span>
                             </div>
                             <p class="description">Ofrezco clases personalizadas de inglés conversacional para todos los niveles. ¡Mejora tu fluidez!</p>
                             <p class="price-type"><i class="fas fa-exchange-alt"></i> Intercambio o S/ 50/hr</p>
-                            <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar / Chatear</button>
-                            <a href="#" class="btn btn-secondary btn-small">Ver Perfil Completo</a>
+                            <div class="card-actions">
+                                <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar</button>
+                                <a href="#" class="btn btn-secondary btn-small">Ver Perfil</a>
+                            </div>
                         </div>
                     </div>
 
@@ -88,16 +92,19 @@
                                 <span class="provider-name">Luis García</span>
                             </a>
                             <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> (4.0)
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <span class="rating-value">(4.0)</span>
                             </div>
                             <p class="description">Ayudo a crear páginas web sencillas con HTML y CSS. Ideal para pequeños emprendimientos.</p>
                             <p class="price-type"><i class="fas fa-exchange-alt"></i> Intercambio o S/ 150/proyecto</p>
-                            <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar / Chatear</button>
-                            <a href="#" class="btn btn-secondary btn-small">Ver Perfil Completo</a>
+                            <div class="card-actions">
+                                <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar</button>
+                                <a href="#" class="btn btn-secondary btn-small">Ver Perfil</a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="service-card featured" data-category="arte"> <div class="featured-badge"><i class="fas fa-star"></i> Destacado</div>
+                    <div class="service-card featured" data-category="arte">
+                        <div class="featured-badge"><i class="fas fa-star"></i> Destacado</div>
                         <img src="https://via.placeholder.com/300x200?text=Retratos+a+Lapiz" alt="Retratos a Lápiz">
                         <div class="card-content">
                             <h4>Retratos a Lápiz Personalizados</h4>
@@ -107,12 +114,14 @@
                                 <span class="provider-name">Sofía Castro</span>
                             </a>
                             <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (5.0)
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="rating-value">(5.0)</span>
                             </div>
                             <p class="description">Realizo retratos a lápiz de alta calidad basados en fotos. Un regalo único.</p>
                             <p class="price-type"><i class="fas fa-exchange-alt"></i> Intercambio</p>
-                            <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar / Chatear</button>
-                            <a href="#" class="btn btn-secondary btn-small">Ver Perfil Completo</a>
+                            <div class="card-actions">
+                                <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar</button>
+                                <a href="#" class="btn btn-secondary btn-small">Ver Perfil</a>
+                            </div>
                         </div>
                     </div>
 
@@ -123,15 +132,17 @@
                             <p class="category"><i class="fas fa-tag"></i> Hogar y Reparaciones</p>
                             <a href="#" class="provider-link">
                                 <img src="img/profile-placeholder.jpg" alt="Diego Rojas" class="provider-avatar">
-                                <span class="provider-name">Diego Rojas</span> <span class="pro-tag">PRO</span>
+                                <span class="provider-name">Diego Rojas</span> <span class="pro-tag small">PRO</span>
                             </a>
                             <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> (4.5)
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span class="rating-value">(4.5)</span>
                             </div>
                             <p class="description">Servicio técnico para computadoras. Diagnóstico y reparación de hardware y software.</p>
                             <p class="price-type"><i class="fas fa-exchange-alt"></i> S/ 80/diagnóstico</p>
-                            <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar / Chatear</button>
-                            <a href="#" class="btn btn-secondary btn-small">Ver Perfil Completo</a>
+                            <div class="card-actions">
+                                <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar</button>
+                                <a href="#" class="btn btn-secondary btn-small">Ver Perfil</a>
+                            </div>
                         </div>
                     </div>
 
@@ -145,12 +156,14 @@
                                 <span class="provider-name">Elena Vargas</span>
                             </a>
                             <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (5.0)
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="rating-value">(5.0)</span>
                             </div>
                             <p class="description">Sesiones de yoga online y presenciales para iniciar tu camino hacia el bienestar.</p>
                             <p class="price-type"><i class="fas fa-exchange-alt"></i> Intercambio o S/ 40/sesión</p>
-                            <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar / Chatear</button>
-                            <a href="#" class="btn btn-secondary btn-small">Ver Perfil Completo</a>
+                            <div class="card-actions">
+                                <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar</button>
+                                <a href="#" class="btn btn-secondary btn-small">Ver Perfil</a>
+                            </div>
                         </div>
                     </div>
 
@@ -164,12 +177,14 @@
                                 <span class="provider-name">Ricardo M. C.</span>
                             </a>
                             <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> (4.5)
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span class="rating-value">(4.5)</span>
                             </div>
                             <p class="description">Traducción de documentos, artículos o textos cortos entre español e inglés.</p>
                             <p class="price-type"><i class="fas fa-exchange-alt"></i> S/ 0.15/palabra</p>
-                            <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar / Chatear</button>
-                            <a href="#" class="btn btn-secondary btn-small">Ver Perfil Completo</a>
+                            <div class="card-actions">
+                                <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar</button>
+                                <a href="#" class="btn btn-secondary btn-small">Ver Perfil</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -183,10 +198,7 @@
             </div>
             <div class="chat-body">
                 <div class="message-container">
-                    <div class="message received">Hola, estoy interesado/a en tus clases de inglés.</div>
-                    <div class="message sent">¡Claro! ¿Qué nivel tienes?</div>
-                    <div class="message received">Soy principiante. ¿Cómo funciona el intercambio?</div>
-                </div>
+                    </div>
             </div>
             <div class="chat-footer">
                 <input type="text" placeholder="Escribe tu mensaje..." id="chat-input">
