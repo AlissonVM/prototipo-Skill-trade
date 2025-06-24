@@ -171,7 +171,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
 }
 
 .logo {
@@ -220,7 +220,7 @@ header nav ul li a:hover::after {
 
 .auth-buttons {
     display: flex;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-sm); /* Espacio entre los botones */
 }
 
 /* --- Hero Section --- */
@@ -545,12 +545,27 @@ header nav ul li a:hover::after {
     box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
-.service-card img {
+/* PLACEHOLDER DE IMAGEN PARA TARJETAS DE SERVICIO */
+.service-image-placeholder {
     width: 100%;
-    height: 220px; /* Ligeramente más alto */
-    object-fit: cover;
-    display: block;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em; /* Tamaño del texto de categoría */
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    background-color: var(--secondary-color-dark); /* Color por defecto */
 }
+
+.skill-placeholder-blue { background-color: #3f51b5; } /* Azul oscuro para idiomas */
+.skill-placeholder-green { background-color: #4CAF50; } /* Verde para tecnología */
+.skill-placeholder-purple { background-color: #9c27b0; } /* Morado para arte */
+.skill-placeholder-orange { background-color: #FF9800; } /* Naranja para hogar */
+.skill-placeholder-red { background-color: #f44336; } /* Rojo para salud */
+/* Puedes añadir más si quieres más categorías con colores específicos */
+
 
 .service-card .card-content {
     padding: var(--spacing-md);
@@ -925,6 +940,7 @@ header nav ul li a:hover::after {
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden; /* Importante para el ribbon */
 }
 .pricing-card:hover, .promo-card:hover {
     transform: translateY(-8px);
@@ -1010,12 +1026,13 @@ header nav ul li a:hover::after {
     font-weight: 600;
 }
 
+/* Ribbon para tarjetas destacadas en Premium */
 .ribbon {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 120px;
-    height: 120px;
+    top: -2px; /* Ajusta la posición superior */
+    right: -2px; /* Ajusta la posición derecha */
+    width: 100px; /* Ancho del área del ribbon */
+    height: 100px; /* Alto del área del ribbon */
     overflow: hidden;
     pointer-events: none;
     z-index: 10;
@@ -1024,20 +1041,22 @@ header nav ul li a:hover::after {
 .ribbon span {
     position: absolute;
     display: block;
-    width: 225px;
-    padding: 10px 0;
+    width: 150px; /* Ancho de la cinta */
+    padding: 8px 0;
     background-color: var(--primary-color-dark); /* Color más oscuro para el ribbon */
     box-shadow: 0 5px 10px rgba(0,0,0,.15);
     color: #fff;
-    font-size: 0.9em;
+    font-size: 0.8em; /* Tamaño de texto más pequeño */
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
-    left: -25px;
-    top: 30px;
-    transform: rotate(45deg);
+    left: -35px; /* Mueve la cinta hacia la izquierda */
+    top: 22px; /* Mueve la cinta hacia abajo */
+    transform: rotate(45deg); /* Gira la cinta */
+    transform-origin: 0% 0%; /* Punto de origen para la rotación */
     z-index: 15;
 }
+
 
 .promo-card .promo-price {
     font-size: 3em;
@@ -1188,6 +1207,22 @@ footer {
     font-weight: 600;
 }
 
+/* Nuevo estilo para el logo en el footer */
+.logo-footer {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+.logo-footer img {
+    height: 32px; /* Tamaño del logo en el footer */
+    margin-right: var(--spacing-sm);
+}
+.logo-footer h3 {
+    margin: 0;
+    color: #fff; /* Asegura que el título también sea blanco */
+}
+
+
 .footer-section p,
 .footer-section ul li a {
     color: var(--footer-text-color);
@@ -1248,6 +1283,7 @@ footer {
     .auth-buttons {
         width: 100%;
         justify-content: center;
+        margin-top: var(--spacing-sm); /* Añadir margen superior si se amontona */
     }
 
     .hero-section h2 {
@@ -1326,6 +1362,13 @@ footer {
         font-size: 3em;
     }
 
+    .pricing-card .ribbon span, .promo-card .ribbon span {
+        width: 180px; /* Ajustar el ancho del ribbon en móvil */
+        left: -45px;
+        top: 25px;
+        font-size: 0.7em;
+    }
+
     .chat-popup {
         width: 90%;
         right: 5%;
@@ -1391,6 +1434,12 @@ footer {
     }
     .pricing-card .subtitle, .promo-card .subtitle {
         font-size: 0.85em;
+    }
+    .pricing-card .ribbon span, .promo-card .ribbon span {
+        width: 150px;
+        left: -35px;
+        top: 22px;
+        font-size: 0.65em;
     }
 
     .chat-header h4 {
