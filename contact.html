@@ -5,241 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - SkillTrade</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="img/logo.png" type="image/png">
-    <style>
-        /* Estilos específicos para la página de contacto */
-        .page-hero.contact-hero {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 80px 0 40px;
-        }
-
-        .page-hero.contact-hero h2 {
-            color: var(--white);
-            font-size: 2.8em;
-            margin-bottom: 15px;
-        }
-
-        .page-hero.contact-hero p {
-            font-size: 1.1em;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: rgba(255,255,255,0.9);
-        }
-
-        #contact-form-section {
-            padding: 60px 0;
-        }
-
-        #contact-form-section .section-title {
-            margin-bottom: 40px;
-            font-size: 2em;
-        }
-
-        .contact-form-container {
-            background-color: var(--white);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-medium);
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: left; /* Alineado a la izquierda para el formulario */
-        }
-
-        .contact-form-container .form-group {
-            margin-bottom: 20px;
-        }
-
-        .contact-form-container label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--light-text-color);
-        }
-
-        .contact-form-container input[type="text"],
-        .contact-form-container input[type="email"],
-        .contact-form-container textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-size: 1em;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .contact-form-container input:focus,
-        .contact-form-container textarea:focus {
-            outline: none;
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 3px rgba(33,150,243,0.2);
-        }
-
-        .contact-form-container textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .contact-form-container .btn-primary {
-            width: 100%;
-            padding: 15px;
-            font-size: 1.1em;
-        }
-
-        .contact-info {
-            text-align: center;
-            margin-top: 50px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .info-item {
-            background-color: var(--white);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-light);
-            flex: 1;
-            min-width: 250px;
-            max-width: 350px;
-            transition: transform 0.3s ease;
-        }
-        .info-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .info-item i {
-            font-size: 2.5em;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-        }
-
-        .info-item h4 {
-            color: var(--text-color);
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-
-        .info-item p {
-            color: var(--light-text-color);
-            font-size: 0.95em;
-            margin-bottom: 0;
-        }
-    </style>
 </head>
 <body>
-    <header class="main-header">
+    <header>
         <div class="container">
             <div class="logo">
                 <img src="img/logo.png" alt="SkillTrade Logo">
                 <h1>SkillTrade</h1>
             </div>
-            <nav class="main-nav">
+            <nav>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="services.html">Explorar Habilidades</a></li>
-                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="premium.html">SkillTrade Pro</a></li>
+                    <li><a href="about.html">Nosotros</a></li>
                     <li><a href="contact.html">Contacto</a></li>
-                    <li><a href="login.html" class="btn btn-secondary">Iniciar Sesión</a></li>
-                    <li><a href="register.html" class="btn btn-primary">Registrarse</a></li>
                 </ul>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-secondary">Iniciar Sesión</a>
+                    <a href="register.html" class="btn btn-primary">Registrarse</a>
+                </div>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="page-hero contact-hero">
+        <section class="hero-section hero-small">
             <div class="container">
-                <h2>Contáctanos</h2>
-                <p>¿Tienes alguna pregunta, sugerencia o necesitas ayuda? ¡Estamos aquí para escucharte y resolver tus dudas!</p>
+                <h2>Ponte en Contacto con Nosotros</h2>
+                <p>¿Tienes preguntas, sugerencias o necesitas ayuda? Estamos aquí para escucharte.</p>
             </div>
         </section>
 
-        <section id="contact-form-section" class="section-padded">
+        <section class="contact-form-section section-padded">
             <div class="container">
-                <h3 class="section-title">Envíanos un Mensaje Directo</h3>
-                <div class="contact-form-container">
-                    <form action="#" method="POST">
-                        <div class="form-group">
-                            <label for="name">Nombre:</label>
-                            <input type="text" id="name" name="name" required placeholder="Tu Nombre Completo">
+                <div class="contact-info-grid">
+                    <div class="contact-details">
+                        <h3>Nuestros Datos de Contacto</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Av. Siempre Viva 742, Lima, Perú</p>
+                        <p><i class="fas fa-phone"></i> +51 987 654 321</p>
+                        <p><i class="fas fa-envelope"></i> info@skilltrade.com</p>
+                        <p><i class="fas fa-clock"></i> Lunes - Viernes: 9:00 AM - 6:00 PM</p>
+                        
+                        <h3 style="margin-top: var(--spacing-lg);">Síguenos en Redes</h3>
+                        <div class="social-icons">
+                            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Correo Electrónico:</label>
-                            <input type="email" id="email" name="email" required placeholder="tu@ejemplo.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Asunto:</label>
-                            <input type="text" id="subject" name="subject" required placeholder="Motivo de tu consulta">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Tu Mensaje:</label>
-                            <textarea id="message" name="message" required placeholder="Escribe tu mensaje aquí..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensaje <i class="fas fa-paper-plane"></i></button>
-                    </form>
+                    </div>
+                    <div class="contact-form-container">
+                        <h3>Envíanos un Mensaje</h3>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nombre Completo</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Asunto</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Tu Mensaje</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Mensaje <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h4>Nuestra Ubicación (Oficina Virtual)</h4>
-                        <p>Av. Primavera 123, Of. 456, San Borja, Lima, Perú</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <h4>Correo Electrónico</h4>
-                        <p><a href="mailto:info@skilltrade.com">info@skilltrade.com</a></p>
-                        <p><a href="mailto:soporte@skilltrade.com">soporte@skilltrade.com</a></p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <h4>Teléfono</h4>
-                        <p><a href="tel:+51987654321">+51 987 654 321</a></p>
-                        <p>Lun - Vie, 9:00 AM - 6:00 PM</p>
-                    </div>
-                </div>
+        <section class="cta-section section-padded">
+            <div class="container">
+                <h2>¿Listo para empezar tu próximo intercambio?</h2>
+                <a href="register.html" class="btn btn-primary btn-large">Únete a SkillTrade Hoy</a>
             </div>
         </section>
     </main>
 
-    <footer class="main-footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="img/logo.png" alt="SkillTrade Logo" class="footer-logo">
-                    <p>SkillTrade: Conectando talentos para un futuro colaborativo y sostenible.</p>
+                <div class="footer-section about">
+                    <div class="logo-footer">
+                        <img src="img/logo.png" alt="SkillTrade Logo">
+                        <h3>SkillTrade</h3>
+                    </div>
+                    <p>Conectando talentos para un futuro más colaborativo y sostenible.</p>
                 </div>
-                <div class="footer-links">
-                    <h4>Navegación</h4>
+                <div class="footer-section links">
+                    <h3>Enlaces Rápidos</h3>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="about.html">Nosotros</a></li>
                         <li><a href="services.html">Explorar Habilidades</a></li>
-                        <li><a href="about.html">Sobre Nosotros</a></li>
-                        <li><a href="contact.html">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Términos de Servicio</a></li>
+                        <li><a href="premium.html">SkillTrade Pro</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
                         <li><a href="#">Política de Privacidad</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
-                    <h4>Síguenos</h4>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <div class="footer-section contact-info">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> info@skilltrade.com</p>
+                    <p><i class="fas fa-phone"></i> +51 987 654 321</p>
+                </div>
+                <div class="footer-section social">
+                    <h3>Síguenos</h3>
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 SkillTrade. Todos los derechos reservados.</p>
+                &copy; 2023 SkillTrade. Todos los derechos reservados.
             </div>
         </div>
     </footer>
