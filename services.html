@@ -5,346 +5,228 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explorar Habilidades - SkillTrade</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="img/logo.png" type="image/png">
-    <style>
-        /* Estilos específicos para la página de servicios */
-        .page-hero.services-hero {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 80px 0 40px; /* Ajuste el padding para espacio */
-        }
-
-        .page-hero.services-hero h2 {
-            color: var(--white);
-            font-size: 2.8em;
-            margin-bottom: 15px;
-        }
-
-        .page-hero.services-hero p {
-            font-size: 1.1em;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: rgba(255,255,255,0.9);
-        }
-
-        .search-bar-container {
-            margin-top: 30px;
-            display: flex;
-            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
-            justify-content: center;
-            gap: 15px; /* Espacio entre los elementos */
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .search-bar-container input[type="text"],
-        .search-bar-container select {
-            flex-grow: 1; /* Permite que ocupen el espacio disponible */
-            padding: 12px 20px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-size: 1em;
-            background-color: var(--white);
-            color: var(--text-color);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            min-width: 200px; /* Ancho mínimo para elementos */
-        }
-
-        .search-bar-container button {
-            background-color: var(--primary-color);
-            color: var(--white);
-            border: none;
-            padding: 12px 25px;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .search-bar-container button:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        /* Estilos de las tarjetas de servicio */
-        #services-list {
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .service-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-light);
-            padding: 25px;
-            text-align: left; /* Alineado a la izquierda para el contenido */
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            display: flex; /* Para flexbox interno */
-            flex-direction: column;
-            justify-content: space-between; /* Empuja el botón hacia abajo */
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .service-card .category {
-            background-color: #e0f2f7; /* Un azul claro */
-            color: #0288d1; /* Un azul más oscuro */
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: 600;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .service-card h4 {
-            color: var(--text-color);
-            margin-top: 0;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .service-card .provider {
-            font-size: 0.9em;
-            color: var(--light-text-color);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .service-card .provider i {
-            color: var(--primary-color);
-        }
-
-        .service-card .description {
-            font-size: 0.95em;
-            color: var(--text-color);
-            margin-bottom: 20px;
-            flex-grow: 1; /* Permite que la descripción ocupe el espacio */
-        }
-
-        .service-card .rating {
-            color: var(--accent-color);
-            font-size: 0.9em;
-            margin-bottom: 15px;
-        }
-
-        .service-card .price-type {
-            font-size: 1em;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .service-card .price-type i {
-            font-size: 1.2em;
-        }
-
-        .service-card .btn-primary {
-            width: 100%;
-            margin-top: auto; /* Empuja el botón al final de la tarjeta */
-        }
-
-        @media (max-width: 600px) {
-            .search-bar-container {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .search-bar-container input[type="text"],
-            .search-bar-container select,
-            .search-bar-container button {
-                width: 100%;
-            }
-        }
-    </style>
 </head>
 <body>
-    <header class="main-header">
+    <header>
         <div class="container">
             <div class="logo">
                 <img src="img/logo.png" alt="SkillTrade Logo">
                 <h1>SkillTrade</h1>
             </div>
-            <nav class="main-nav">
+            <nav>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="services.html">Explorar Habilidades</a></li>
-                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="premium.html">SkillTrade Pro</a></li> <li><a href="about.html">Nosotros</a></li>
                     <li><a href="contact.html">Contacto</a></li>
-                    <li><a href="login.html" class="btn btn-secondary">Iniciar Sesión</a></li>
-                    <li><a href="register.html" class="btn btn-primary">Registrarse</a></li>
                 </ul>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-secondary">Iniciar Sesión</a>
+                    <a href="register.html" class="btn btn-primary">Registrarse</a>
+                </div>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="page-hero services-hero">
+        <section class="hero-section hero-small">
             <div class="container">
-                <h2>Explora Habilidades y Servicios</h2>
-                <p>Encuentra el talento que necesitas o la oportunidad para ofrecer el tuyo en nuestra creciente comunidad.</p>
-                <div class="search-bar-container">
-                    <input type="text" placeholder="Busca por habilidad, palabra clave...">
-                    <select>
-                        <option value="">Todas las categorías</option>
-                        <option value="idiomas">Idiomas</option>
+                <h2>Explora un Mundo de Habilidades</h2>
+                <p>Encuentra o publica el servicio que necesitas o el talento que ofreces.</p>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="container">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Buscar habilidades o servicios...">
+                    <select id="category-select">
+                        <option value="">Todas las Categorías</option>
                         <option value="arte">Arte y Diseño</option>
                         <option value="tecnologia">Tecnología y Programación</option>
-                        <option value="educacion">Educación y Tutorías</option>
-                        <option value="bienestar">Bienestar y Salud</option>
+                        <option value="idiomas">Idiomas y Educación</option>
                         <option value="hogar">Hogar y Reparaciones</option>
-                        <option value="musica">Música y Sonido</option>
-                        <option value="fotografia">Fotografía y Video</option>
+                        <option value="salud">Salud y Bienestar</option>
+                        <option value="otros">Otros</option>
                     </select>
-                    <button><i class="fas fa-search"></i> Buscar</button>
+                    <button class="btn btn-primary"><i class="fas fa-search"></i> Buscar</button>
                 </div>
             </div>
         </section>
 
-        <section id="services-list" class="section-padded">
+        <section class="services-listing">
             <div class="container">
-                <h3 class="section-title">Habilidades Destacadas</h3>
-                <div class="service-grid">
-                    <div class="service-card">
-                        <div>
-                            <span class="category">Educación</span>
-                            <h4>Clases de Excel Avanzado</h4>
-                            <p class="provider"><i class="fas fa-user-circle"></i> Ofrecido por: Ana G.</p>
+                <h3>Habilidades Destacadas y Populares</h3>
+                <div class="service-grid" id="service-list">
+                    <div class="service-card featured" data-category="idiomas"> <div class="featured-badge"><i class="fas fa-star"></i> Destacado</div>
+                        <img src="https://via.placeholder.com/300x200?text=Clases+Ingles" alt="Clases de Inglés">
+                        <div class="card-content">
+                            <h4>Clases de Inglés Conversacional <span class="pro-tag">PRO</span></h4>
+                            <p class="category"><i class="fas fa-tag"></i> Idiomas y Educación</p>
+                            <a href="#" class="provider-link">
+                                <img src="img/profile-placeholder.jpg" alt="Ana Pérez" class="provider-avatar">
+                                <span class="provider-name">Ana Pérez</span> <span class="pro-tag">PRO</span>
+                            </a>
                             <div class="rating">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> (4.5)
                             </div>
-                            <p class="description">Aprende a dominar Excel desde lo básico hasta funciones complejas y macros. ¡Ideal para estudiantes y profesionales que quieren mejorar su eficiencia!</p>
+                            <p class="description">Ofrezco clases personalizadas de inglés conversacional para todos los niveles. ¡Mejora tu fluidez!</p>
+                            <p class="price-type"><i class="fas fa-exchange-alt"></i> Intercambio o S/ 50/hr</p>
+                            <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar / Chatear</button>
+                            <a href="#" class="btn btn-secondary btn-small">Ver Perfil Completo</a>
                         </div>
-                        <p class="price-type"><i class="fas fa-exchange-alt"></i> Trueque / <i class="fas fa-dollar-sign"></i> Pago Monetario</p>
-                        <a href="#" class="btn btn-primary">Ver Detalles y Negociar</a>
                     </div>
 
-                    <div class="service-card">
-                        <div>
-                            <span class="category">Arte y Diseño</span>
-                            <h4>Diseño de Logos Profesionales</h4>
-                            <p class="provider"><i class="fas fa-user-circle"></i> Ofrecido por: Carlos R.</p>
+                    <div class="service-card" data-category="tecnologia">
+                        <img src="https://via.placeholder.com/300x200?text=Desarrollo+Web" alt="Desarrollo Web Básico">
+                        <div class="card-content">
+                            <h4>Desarrollo Web Básico (HTML/CSS)</h4>
+                            <p class="category"><i class="fas fa-tag"></i> Tecnología y Programación</p>
+                            <a href="#" class="provider-link">
+                                <img src="img/profile-placeholder.jpg" alt="Luis García" class="provider-avatar">
+                                <span class="provider-name">Luis García</span>
+                            </a>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> (4.0)
+                            </div>
+                            <p class="description">Ayudo a crear páginas web sencillas con HTML y CSS. Ideal para pequeños emprendimientos.</p>
+                            <p class="price-type"><i class="fas fa-exchange-alt"></i> Intercambio o S/ 150/proyecto</p>
+                            <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar / Chatear</button>
+                            <a href="#" class="btn btn-secondary btn-small">Ver Perfil Completo</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card featured" data-category="arte"> <div class="featured-badge"><i class="fas fa-star"></i> Destacado</div>
+                        <img src="https://via.placeholder.com/300x200?text=Retratos+a+Lapiz" alt="Retratos a Lápiz">
+                        <div class="card-content">
+                            <h4>Retratos a Lápiz Personalizados</h4>
+                            <p class="category"><i class="fas fa-tag"></i> Arte y Diseño</p>
+                            <a href="#" class="provider-link">
+                                <img src="img/profile-placeholder.jpg" alt="Sofía Castro" class="provider-avatar">
+                                <span class="provider-name">Sofía Castro</span>
+                            </a>
                             <div class="rating">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (5.0)
                             </div>
-                            <p class="description">Creación de identidad visual única y memorable para tu marca o proyecto personal. Con concepto, revisión y archivos fuente.</p>
+                            <p class="description">Realizo retratos a lápiz de alta calidad basados en fotos. Un regalo único.</p>
+                            <p class="price-type"><i class="fas fa-exchange-alt"></i> Intercambio</p>
+                            <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar / Chatear</button>
+                            <a href="#" class="btn btn-secondary btn-small">Ver Perfil Completo</a>
                         </div>
-                        <p class="price-type"><i class="fas fa-dollar-sign"></i> Pago Monetario</p>
-                        <a href="#" class="btn btn-primary">Ver Detalles y Negociar</a>
                     </div>
 
-                    <div class="service-card">
-                        <div>
-                            <span class="category">Tecnología</span>
-                            <h4>Reparación y Mantenimiento de PCs</h4>
-                            <p class="provider"><i class="fas fa-user-circle"></i> Ofrecido por: Luis M.</p>
-                            <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (4.0)
-                            </div>
-                            <p class="description">Soluciones a problemas de hardware y software, optimización del sistema y mantenimiento preventivo para tu equipo.</p>
-                        </div>
-                        <p class="price-type"><i class="fas fa-exchange-alt"></i> Trueque</p>
-                        <a href="#" class="btn btn-primary">Ver Detalles y Negociar</a>
-                    </div>
-
-                    <div class="service-card">
-                        <div>
-                            <span class="category">Idiomas</span>
-                            <h4>Tutorías de Inglés Conversacional</h4>
-                            <p class="provider"><i class="fas fa-user-circle"></i> Ofrecido por: Sofía P.</p>
-                            <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (5.0)
-                            </div>
-                            <p class="description">Mejora tu fluidez y confianza en inglés con sesiones personalizadas. Nos enfocamos en conversación y pronunciación.</p>
-                        </div>
-                        <p class="price-type"><i class="fas fa-dollar-sign"></i> Pago Monetario</p>
-                        <a href="#" class="btn btn-primary">Ver Detalles y Negociar</a>
-                    </div>
-
-                    <div class="service-card">
-                        <div>
-                            <span class="category">Hogar y Reparaciones</span>
-                            <h4>Clases de Cocina Saludable</h4>
-                            <p class="provider"><i class="fas fa-user-circle"></i> Ofrecido por: Elena V.</p>
+                    <div class="service-card" data-category="hogar">
+                        <img src="https://via.placeholder.com/300x200?text=Reparacion+PC" alt="Reparación de PCs y Laptops">
+                        <div class="card-content">
+                            <h4>Reparación de PCs y Laptops</h4>
+                            <p class="category"><i class="fas fa-tag"></i> Hogar y Reparaciones</p>
+                            <a href="#" class="provider-link">
+                                <img src="img/profile-placeholder.jpg" alt="Diego Rojas" class="provider-avatar">
+                                <span class="provider-name">Diego Rojas</span> <span class="pro-tag">PRO</span>
+                            </a>
                             <div class="rating">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> (4.5)
                             </div>
-                            <p class="description">Aprende a preparar platos deliciosos y nutritivos para tu día a día. Recetas sencillas y consejos prácticos.</p>
+                            <p class="description">Servicio técnico para computadoras. Diagnóstico y reparación de hardware y software.</p>
+                            <p class="price-type"><i class="fas fa-exchange-alt"></i> S/ 80/diagnóstico</p>
+                            <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar / Chatear</button>
+                            <a href="#" class="btn btn-secondary btn-small">Ver Perfil Completo</a>
                         </div>
-                        <p class="price-type"><i class="fas fa-exchange-alt"></i> Trueque</p>
-                        <a href="#" class="btn btn-primary">Ver Detalles y Negociar</a>
                     </div>
 
-                    <div class="service-card">
-                        <div>
-                            <span class="category">Bienestar y Salud</span>
-                            <h4>Sesiones de Yoga para Principiantes</h4>
-                            <p class="provider"><i class="fas fa-user-circle"></i> Ofrecido por: Marco L.</p>
+                    <div class="service-card" data-category="salud">
+                        <img src="https://via.placeholder.com/300x200?text=Clases+Yoga" alt="Clases de Yoga para Principiantes">
+                        <div class="card-content">
+                            <h4>Clases de Yoga para Principiantes</h4>
+                            <p class="category"><i class="fas fa-tag"></i> Salud y Bienestar</p>
+                            <a href="#" class="provider-link">
+                                <img src="img/profile-placeholder.jpg" alt="Elena Vargas" class="provider-avatar">
+                                <span class="provider-name">Elena Vargas</span>
+                            </a>
                             <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (4.0)
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (5.0)
                             </div>
-                            <p class="description">Iníciate en el mundo del yoga con sesiones guiadas para mejorar tu flexibilidad, fuerza y bienestar mental.</p>
+                            <p class="description">Sesiones de yoga online y presenciales para iniciar tu camino hacia el bienestar.</p>
+                            <p class="price-type"><i class="fas fa-exchange-alt"></i> Intercambio o S/ 40/sesión</p>
+                            <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar / Chatear</button>
+                            <a href="#" class="btn btn-secondary btn-small">Ver Perfil Completo</a>
                         </div>
-                        <p class="price-type"><i class="fas fa-dollar-sign"></i> Pago Monetario</p>
-                        <a href="#" class="btn btn-primary">Ver Detalles y Negociar</a>
                     </div>
 
+                    <div class="service-card" data-category="idiomas">
+                        <img src="https://via.placeholder.com/300x200?text=Traduccion+Espanol" alt="Traducciones Español-Inglés">
+                        <div class="card-content">
+                            <h4>Traducciones Español-Inglés</h4>
+                            <p class="category"><i class="fas fa-tag"></i> Idiomas y Educación</p>
+                            <a href="#" class="provider-link">
+                                <img src="img/profile-placeholder.jpg" alt="Ricardo M. C." class="provider-avatar">
+                                <span class="provider-name">Ricardo M. C.</span>
+                            </a>
+                            <div class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> (4.5)
+                            </div>
+                            <p class="description">Traducción de documentos, artículos o textos cortos entre español e inglés.</p>
+                            <p class="price-type"><i class="fas fa-exchange-alt"></i> S/ 0.15/palabra</p>
+                            <button class="btn btn-primary btn-small chat-btn"><i class="fas fa-comments"></i> Contactar / Chatear</button>
+                            <a href="#" class="btn btn-secondary btn-small">Ver Perfil Completo</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <div id="chat-popup" class="chat-popup">
+            <div class="chat-header">
+                <h4>Chat con <span id="chat-with-name"></span></h4>
+                <button id="close-chat" class="btn-close-chat">&times;</button>
+            </div>
+            <div class="chat-body">
+                <div class="message-container">
+                    <div class="message received">Hola, estoy interesado/a en tus clases de inglés.</div>
+                    <div class="message sent">¡Claro! ¿Qué nivel tienes?</div>
+                    <div class="message received">Soy principiante. ¿Cómo funciona el intercambio?</div>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Escribe tu mensaje..." id="chat-input">
+                <button class="btn btn-primary btn-small" id="send-chat-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
     </main>
 
-    <footer class="main-footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="img/logo.png" alt="SkillTrade Logo" class="footer-logo">
-                    <p>SkillTrade: Conectando talentos para un futuro colaborativo y sostenible.</p>
+                <div class="footer-section about">
+                    <h3>Sobre SkillTrade</h3>
+                    <p>Conectando talentos para un futuro más colaborativo y sostenible.</p>
                 </div>
-                <div class="footer-links">
-                    <h4>Navegación</h4>
+                <div class="footer-section links">
+                    <h3>Enlaces Rápidos</h3>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="about.html">Nosotros</a></li>
                         <li><a href="services.html">Explorar Habilidades</a></li>
-                        <li><a href="about.html">Sobre Nosotros</a></li>
-                        <li><a href="contact.html">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Términos de Servicio</a></li>
+                        <li><a href="premium.html">SkillTrade Pro</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
                         <li><a href="#">Política de Privacidad</a></li>
                     </ul>
                 </div>
-                <div class="footer-social">
-                    <h4>Síguenos</h4>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <div class="footer-section contact-info">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> info@skilltrade.com</p>
+                    <p><i class="fas fa-phone"></i> +51 987 654 321</p>
+                </div>
+                <div class="footer-section social">
+                    <h3>Síguenos</h3>
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 SkillTrade. Todos los derechos reservados.</p>
+                &copy; 2023 SkillTrade. Todos los derechos reservados.
             </div>
         </div>
     </footer>
