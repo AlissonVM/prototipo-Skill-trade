@@ -17,14 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Lógica básica para los formularios de autenticación (simula un registro/login)
-    const registerForm = document.querySelector('form.auth-form'); // Selecciona el formulario genérico
-    if (registerForm) {
-        registerForm.addEventListener('submit', (event) => {
+    const authForm = document.querySelector('form.auth-form'); // Selecciona el formulario genérico
+    if (authForm) {
+        authForm.addEventListener('submit', (event) => {
             event.preventDefault();
 
             // Determinar si es formulario de registro o login por su ID o contexto
-            if (registerForm.closest('.auth-section')) { // Solo si está dentro de la sección de autenticación
-                const emailInput = registerForm.querySelector('input[type="email"]');
+            if (authForm.closest('.auth-section')) { // Solo si está dentro de la sección de autenticación
+                const emailInput = authForm.querySelector('input[type="email"]');
                 if (!emailInput) return; // Asegúrate de que existe el campo de email
 
                 if (emailInput.id === 'register-email') {
@@ -112,12 +112,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const providerName = button.closest('.service-card').querySelector('.provider-name').textContent;
             chatWithName.textContent = providerName;
             chatPopup.style.display = 'flex'; // Muestra el chat
-            // Opcional: limpiar mensajes anteriores o cargar mensajes predefinidos
+            
+            // Limpiar mensajes anteriores y establecer el primer mensaje del interesado
             messageContainer.innerHTML = `
-                <div class="message received">Hola, estoy interesado/a en tus ${button.closest('.service-card').querySelector('h4').textContent.split('<')[0].trim()}.</div>
-                <div class="message sent">¡Claro! ¿Cómo puedo ayudarte?</div>
+                <div class="message sent">Hola, estoy interesado/a en tus ${button.closest('.service-card').querySelector('h4').textContent.split('<')[0].trim()}. ¿Podrías darme más detalles?</div>
             `;
             messageContainer.scrollTop = messageContainer.scrollHeight; // Scroll al final
+            chatInput.focus(); // Enfocar el input para que el usuario pueda escribir
+
+            // Simular una respuesta del proveedor después de un breve retraso
+            setTimeout(() => {
+                const reply = document.createElement('div');
+                reply.classList.add('message', 'received');
+                reply.textContent = "¡Claro! Con gusto te doy más detalles. ¿En qué te puedo ayudar específicamente?";
+                messageContainer.appendChild(reply);
+                messageContainer.scrollTop = messageContainer.scrollHeight;
+            }, 1500); 
         });
     });
 
@@ -142,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     const reply = document.createElement('div');
                     reply.classList.add('message', 'received');
-                    reply.textContent = "Gracias por tu mensaje. Te responderé en breve.";
+                    reply.textContent = "Entendido. Déjame revisar eso por ti."; // Respuesta genérica
                     messageContainer.appendChild(reply);
                     messageContainer.scrollTop = messageContainer.scrollHeight;
                 }, 1500); // Responde después de 1.5 segundos
